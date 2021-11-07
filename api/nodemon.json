@@ -1,7 +1,11 @@
 {
   "events": {
-    "restart": "npm run build:client"
+    "restart": ""
   },
+  "watch": [
+    "src"
+  ],
+ 
   "ignore": [
     ".git",
     "build/*",

@@ -5,11 +5,11 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 // App Imports
-import { NODE_ENV } from '../react-app-env';
+import { NODE_ENV } from '../env';
 import cors from 'cors';
 
 export default function(app) {
-	console.info('SETUP - Load modules..');
+	console.info('Server - Load modules..');
 
 	// Enable CORS
 	app.use(cors());

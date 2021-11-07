@@ -1,7 +1,7 @@
 import Express from 'express';
 
-import product from '../../assets/product-id.json';
-import subscriptions from '../../assets/subscriptions.json';
+import product from '../assets/product-id.json';
+import subscriptions from '../assets/subscriptions.json';
 
 const router = Express.Router();
 

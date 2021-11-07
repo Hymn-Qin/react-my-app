@@ -11,7 +11,7 @@
     "eject": "react-app-rewired eject",
     "storybook": "start-storybook -p 9000 -c storybook",
     "build-storybook": "build-storybook -c .storybook -o .out",
-    "start:server": "nodemon --exec babel-node -- src/server/index.js"
+    "start:server": "nodemon --exec babel-node -- api/index.js"
   },
   "browserslist": {
     "production": [

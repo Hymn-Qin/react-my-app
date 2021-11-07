@@ -1,7 +1,7 @@
 import Express from 'express';
 
-import crates from '../../assets/crates.json';
-import crate from '../../assets/crate-id.json';
+import crates from '../assets/crates.json';
+import crate from '../assets/crate-id.json';
 
 const router = Express.Router();
 
