@@ -10,8 +10,8 @@ import { Icon } from '../components/icon';
 // Module
 import Header from './header/Header';
 import { messageHide } from '@store/common/actions';
-import Footer from "@layout/footer/Footer";
-import AlertMessage from "@layout/AlertMessage";
+import Footer from '@layout/footer/Footer';
+import AlertMessage from '@layout/AlertMessage';
 
 const Layout = (props) =>
   <section  style={{ height: '100%' }}>

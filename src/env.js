@@ -28,4 +28,4 @@ export const PORT = process.env.PORT || 3000;
  **/
 
 //server port
-export const EXPRESS_PORT = process.env.EXPRESS_PORT
+export const EXPRESS_PORT = process.env.EXPRESS_PORT;

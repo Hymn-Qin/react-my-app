@@ -86,7 +86,7 @@ export function getById(productId) {
 
 		const [error, product] = await getApi(productId);
 		if (product) {
-			return product
+			return product;
 		}
 		if (error) {
 			dispatch(messageShow(error || 'There was some error fetching product types. Please try again.'));
@@ -204,10 +204,10 @@ export function remove(variables) {
 export function getTypes() {
 	return async dispatch => {
 
-		const [error, types] = await productTypes()
-		if (types) return types
+		const [error, types] = await productTypes();
+		if (types) return types;
 		if (error) {
-			dispatch(messageShow('There was some error fetching product types. Please try again.'))
+			dispatch(messageShow('There was some error fetching product types. Please try again.'));
 		}
 		return null;
 	};
