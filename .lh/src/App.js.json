@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/App.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1700310652626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700312479131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import Layout from '@layout/Layout';\n import RoutePrivate from '@modules/auth/RoutePrivate';\n import NotFound from '@layout/NotFound';\n \n-const App = () => (\n+const App = () =>\n   <Layout>\n     {/* route 路由注册 */}\n     <Switch>\n       {/* 将路由表转换为路由组件表 */}\n@@ -22,6 +22,6 @@\n       )}\n       <Route component={NotFound} />\n     </Switch>\n   </Layout>\n-);\n+  ;\n export default App;\n"
+                }
+            ],
+            "date": 1700310652626,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport { Route, Switch } from 'react-router-dom';\nimport { routes } from '@routes';\n\nimport Layout from '@layout/Layout';\nimport RoutePrivate from '@modules/auth/RoutePrivate';\nimport NotFound from '@layout/NotFound';\n\nconst App = () => (\n  <Layout>\n    {/* route 路由注册 */}\n    <Switch>\n      {/* 将路由表转换为路由组件表 */}\n      {Object.values(routes).map((route, index) =>\n        // 遍历注册路由\n        route.auth\n          ? <RoutePrivate {...route} key={route.path} index={index}\n            path={typeof route.path === 'function' ? route.path() : route.path} />\n          : <Route {...route} key={route.path} index={index}\n            path={typeof route.path === 'function' ? route.path() : route.path} />\n        ,\n      )}\n      <Route component={NotFound} />\n    </Switch>\n  </Layout>\n);\nexport default App;\n"
+        }
+    ]
+}

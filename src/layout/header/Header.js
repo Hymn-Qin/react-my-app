@@ -33,7 +33,7 @@ const Header = (props) => (
     <Grid alignCenter={true} style={{ marginTop: '1.5em' }}>
       <GridCell>
         {/* Logo */}
-        <Logo style={{ float: 'left' }}/>
+        <Logo style={{ float: 'left' }} />
 
         {/* Left Menu */}
         <Menu style={{ float: 'left', marginTop: '0.5em', marginLeft: '2em' }}>
@@ -43,7 +43,7 @@ const Header = (props) => (
 
           <MenuItem to={homeRoutes.howItWorks.path}>How It Works</MenuItem>
 
-          <MenuItem to={homeRoutes.whatsNew.path}>What's New</MenuItem>
+          <MenuItem to={homeRoutes.whatsNew.path}>What&apos;s New</MenuItem>
         </Menu>
       </GridCell>
 

@@ -10,7 +10,7 @@ export const productList = {
 	component: ProductList,
 	auth: true,
 	role: params.user.roles.admin
-}
+};
 
 export const productCreate = {
 	path: '/admin/product/create',

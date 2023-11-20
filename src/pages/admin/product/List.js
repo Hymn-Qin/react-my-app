@@ -20,24 +20,25 @@ import Loading from '@layout/Loading';
 
 const List = (props) => {
 
-	const [state, setState] = useState({ isLoading: false })
+	const [state, setState] = useState({ isLoading: false });
 
 	useEffect(() => {
 		props.getProductList();
 	}, []);
 
 	const remove = (id) => {
+		// eslint-disable-next-line no-alert
 		let check = window.confirm('Are you sure you want to delete this product?');
 		if (check) {
-			setState({ isLoading: true})
-			console.log('remove')
+			setState({ isLoading: true });
+			console.log('remove');
 			props.removeProduct({ id })
 				.then((data) => {
-					console.log('remove' + data)
+					console.log('remove' + data);
 					if (data) props.getProductList(false);
 				})
 				.then(() => {
-					setState({ isLoading: false})
+					setState({ isLoading: false });
 				});
 		}
 	};

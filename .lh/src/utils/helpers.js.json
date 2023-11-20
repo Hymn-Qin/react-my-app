@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/utils/helpers.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1700310602403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700310615954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,6 +27,6 @@\n \t\t.replace(/\\s+/g, '-')           // Replace spaces with -\n \t\t.replace(/[^\\w\\-]+/g, '')       // Remove all non-word chars\n \t\t//.replace(/\\-\\-+/g, '-')         // Replace multiple - with single -\n \t\t.replace(/^-+/, '')             // Trim - from start of text\n-\t\t.replace(/-+$/, '')            // Trim - from end of text\n+\t\t.replace(/-+$/, '');            // Trim - from end of text\n }\n"
+                }
+            ],
+            "date": 1700310602403,
+            "name": "Commit-0",
+            "content": "// Render element or component by provided condition\nexport function renderIf(condition, renderFn) {\n\treturn condition ? renderFn() : null;\n}\n\n// Check if object is empty\nexport function isEmpty(obj) {\n\t//for...in循环对象的所有枚举属性，然后再使用hasOwnProperty()方法来忽略继承属性。\n\tfor (let name in obj) {\n\t\t//Object的hasOwnProperty()方法返回一个布尔值，判断对象是否包含特定的自身（非继承）属性\n\t\tif (obj.hasOwnProperty(name)) {\n\t\t\treturn false;\n\t\t}\n\t}\n\tif (typeof obj !== 'object') {\n\t\treturn false;\n\t}\n\t//if (obj.constructor !== Object) {\n\t//\treturn false;\n\t//}\n\treturn true;\n}\n\n// Slug\nexport function slug(text) {\n\treturn text.toString().toLowerCase()\n\t\t.replace(/\\s+/g, '-')           // Replace spaces with -\n\t\t.replace(/[^\\w\\-]+/g, '')       // Remove all non-word chars\n\t\t//.replace(/\\-\\-+/g, '-')         // Replace multiple - with single -\n\t\t.replace(/^-+/, '')             // Trim - from start of text\n\t\t.replace(/-+$/, '')            // Trim - from end of text\n}\n"
+        }
+    ]
+}

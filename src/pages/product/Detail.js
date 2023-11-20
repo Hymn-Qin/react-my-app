@@ -30,16 +30,16 @@ const Detail = (props) => {
 	return <div>
 		{!error
 			? isLoading
-				? <Loading/>
+				? <Loading />
 				: renderIf(item && item.id, () => (
 					<div>
 						{/* SEO */}
 						<Helmet>
 							<title>{`Product - ${item.name}`}</title>
-							<meta name="description" content={`Product - ${item.name}`}/>
-							<meta property="og:title" content={`Product - ${item.name}`}/>
-							<meta property="og:image" content={routeLocal + item.image}/>
-							<meta property="og:description" content={`Product - ${item.name}`}/>
+							<meta name="description" content={`Product - ${item.name}`} />
+							<meta property="og:title" content={`Product - ${item.name}`} />
+							<meta property="og:image" content={routeLocal + item.image} />
+							<meta property="og:description" content={`Product - ${item.name}`} />
 						</Helmet>
 
 						{/* Top title bar */}
@@ -54,7 +54,7 @@ const Detail = (props) => {
 							{/* Left Content - Image */}
 							<GridCell style={{ maxWidth: '35em' }}>
 								<Card>
-									<img src={routeLocal + item.image} alt={item.name} style={{ width: '100%' }}/>
+									<img src={routeLocal + item.image} alt={item.name} style={{ width: '100%' }} />
 								</Card>
 							</GridCell>
 
@@ -78,10 +78,10 @@ const Detail = (props) => {
 						</Grid>
 
 						{/* Related products list */}
-						<Related productId={item.id}/>
+						<Related productId={item.id} />
 					</div>
 				))
-			: <Redirect to={homeRoutes.home.path}/>}
+			: <Redirect to={homeRoutes.home.path} />}
 	</div>;
 };
 

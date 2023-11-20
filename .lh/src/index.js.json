@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1700310216885,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1700310216885,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport ReactDOM from 'react-dom';\nimport { Provider } from 'react-redux';\nimport { BrowserRouter as Router } from 'react-router-dom';\n\nimport { store } from '@store/store';\nimport { initUser } from '@store/user/actions';\nimport * as serviceWorker from './serviceWorker';\n\n// css\nimport GlobalStyle from './css/Global.style';\n\nimport App from './App';\nimport ScrollToTop from '@layout/ScrollToTop';\n\n// User Authentication\ninitUser();\n\n// App\nconst Index = () => (\n\t<Provider store={store} key=\"provider\">\n\t\t{/* Global style */}\n\t\t{/*<GlobalStyle />*/}\n\t\t{/* 创建一个history BrowserRouter */}\n\t\t<Router>\n\t\t\t<ScrollToTop />\n\t\t\t<App />\n\t\t</Router>\n\t</Provider>\n);\n\nReactDOM.render(<Index />, document.getElementById('root'));\n\n// If you want your app to work offline and load faster, you can change\n// unregister() to register() below. Note this comes with some pitfalls.\n// Learn more about service workers: https://bit.ly/CRA-PWA\nserviceWorker.register();\n//serviceWorker.unregister();\n"
+        }
+    ]
+}

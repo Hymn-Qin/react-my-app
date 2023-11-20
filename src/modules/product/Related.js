@@ -24,14 +24,14 @@ const Related = ({ productId, getProductRelatedList, productsRelated }) => {
 			<Grid>
 				<GridCell>
 					{isLoading
-						? <Loading/>
+						? <Loading />
 						: list && list.length > 0
 							? list.map(product => (
 								<div key={product.id} style={{ margin: '2em', float: 'left' }}>
-									<ProductItem product={product}/>
+									<ProductItem product={product} />
 								</div>
 							))
-							: <EmptyMessage message="No related products to show."/>}
+							: <EmptyMessage message="No related products to show." />}
 				</GridCell>
 
 			</Grid>

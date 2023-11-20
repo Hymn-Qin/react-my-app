@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/modules/subscriptions/Item.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1700310445906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1700310445906,
+            "name": "Commit-0",
+            "content": "import React, { PureComponent, useState } from 'react';\nimport { connect } from 'react-redux';\nimport PropTypes from 'prop-types';\nimport { withRouter } from 'react-router-dom';\n\nimport { Card } from '@components/card';\nimport { black, grey2, white } from '@components/values/colors';\nimport { routeLocal } from '@routes';\nimport { Icon } from '@components/icon';\nimport { Button } from '@components/button';\nimport { H4 } from '@components/typography';\n\nimport { getListByUser, remove } from '@store/subscriptions/actions';\n\nconst Item = (props) => {\n\tconst [state, setState] = useState({ isLoading: false });\n\tconst onUnsubscribe = (id) => {\n\t\t// eslint-disable-next-line no-alert\n\t\tlet check = window.confirm('Are you sure you want to unsubscribe to this crate?');\n\t\tif (check) {\n\t\t\tsetState({ isLoading: true });\n\n\t\t\tprops.remove({ id })\n\t\t\t\t.then((data) => {\n\t\t\t\t\tif (data) props.getListByUser();\n\t\t\t\t})\n\t\t\t\t.then(() => {\n\t\t\t\t\tsetState({ isLoading: false });\n\t\t\t\t});\n\n\t\t}\n\t};\n\tconst { id, crate, createdAt } = props.subscription;\n\treturn (\n\t\t<Card style={{ width: '18em', backgroundColor: white }}>\n\t\t\t<p style={{ padding: '2em 3em 0 3em' }}>\n\t\t\t\t<img src={`${routeLocal}/images/crate.png`} alt={crate.name} style={{ width: '100%' }} />\n\t\t\t</p>\n\n\t\t\t<div style={{ padding: '1em 1.2em' }}>\n\t\t\t\t<H4 font=\"secondary\" style={{ color: black }}>\n\t\t\t\t\t{crate.name}\n\t\t\t\t</H4>\n\n\t\t\t\t<p style={{ color: grey2, marginTop: '1em' }}>{crate.description}</p>\n\n\t\t\t\t<p style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>\n\t\t\t\t\t<Button\n\t\t\t\t\t\ttheme=\"secondary\"\n\t\t\t\t\t\tonClick={() => onUnsubscribe(id)}\n\t\t\t\t\t\ttype=\"button\"\n\t\t\t\t\t\tdisabled={state.isLoading}\n\t\t\t\t\t>\n\t\t\t\t\t\t<Icon size={1.2} style={{ color: white }}>\n\t\t\t\t\t\t\tremove_circle_outline\n\t\t\t\t\t\t</Icon>{' '}\n\t\t\t\t\t\tUnsubscribe\n\t\t\t\t\t</Button>\n\t\t\t\t</p>\n\n\t\t\t\t<p style={{ color: grey2, marginTop: '1em', fontSize: '0.8em', textAlign: 'center' }}>\n\t\t\t\t\tSubscribed on {new Date(parseInt(createdAt)).toDateString()}\n\t\t\t\t</p>\n\t\t\t</div>\n\t\t</Card>\n\t);\n};\n\nItem.propTypes = {\n\tsubscription: PropTypes.object.isRequired,\n\tuser: PropTypes.object.isRequired,\n\tremove: PropTypes.func.isRequired,\n\tgetListByUser: PropTypes.func.isRequired\n};\n\nconst itemState = (state) => ({\n\tuser: state.user\n});\n\nexport default connect(itemState, { remove, getListByUser })(withRouter(Item));\n"
+        }
+    ]
+}

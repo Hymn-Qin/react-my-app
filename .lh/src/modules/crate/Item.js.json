@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/modules/crate/Item.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1700310394395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1700310394395,
+            "name": "Commit-0",
+            "content": "import React, { PureComponent, useState } from 'react';\nimport { connect } from 'react-redux';\nimport PropTypes from 'prop-types';\nimport { withRouter } from 'react-router-dom';\n\nimport { Card } from '@components/card';\nimport { black, grey2, white } from '@components/values/colors';\nimport { Icon } from '@components/icon';\nimport { Button } from '@components/button';\nimport { H4 } from '@components/typography';\n\nimport { create } from '@store/subscriptions/actions';\nimport { routeLocal } from '@routes';\nimport userRoutes from '@routes/user';\n\nconst Item = (props) => {\n\tconst [state, setState] = useState({ isLoading: false });\n\n\tfunction onSubscribe(id) {\n\t\tsetState({ isLoading: true });\n\t\tprops.create({ id })\n\t\t\t.then((data) => {\n\t\t\t\tif (data) props.history.push(userRoutes.subscriptions.path);\n\t\t\t})\n\t\t\t.then(() => {\n\t\t\t\tsetState({ isLoading: false });\n\t\t\t});\n\t}\n\n\tconst { id, name, description } = props.crate;\n\treturn (\n\t\t<Card style={{ width: '18em', backgroundColor: white }}>\n\t\t\t<p style={{ padding: '2em 3em 0 3em' }}>\n\t\t\t\t<img src={`${routeLocal}/images/crate.png`} alt={name} style={{ width: '100%' }} />\n\t\t\t</p>\n\n\t\t\t<div style={{ padding: '1em 1.2em' }}>\n\t\t\t\t<H4 font=\"secondary\" style={{ color: black }}>\n\t\t\t\t\t{name}\n\t\t\t\t</H4>\n\n\t\t\t\t<p style={{ color: grey2, marginTop: '1em' }}>{description}</p>\n\n\t\t\t\t<p style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>\n\t\t\t\t\t<Button\n\t\t\t\t\t\ttheme=\"primary\"\n\t\t\t\t\t\tonClick={() => onSubscribe(id)}\n\t\t\t\t\t\ttype=\"button\"\n\t\t\t\t\t\tdisabled={state.isLoading}\n\t\t\t\t\t>\n\t\t\t\t\t\t<Icon size={1.2} style={{ color: white }}>\n\t\t\t\t\t\t\tadd\n\t\t\t\t\t\t</Icon>\n\t\t\t\t\t\tSubscribe\n\t\t\t\t\t</Button>\n\t\t\t\t</p>\n\t\t\t</div>\n\t\t</Card>\n\t);\n};\n\nItem.propTypes = {\n\tcrate: PropTypes.object.isRequired,\n\tuser: PropTypes.object.isRequired,\n\tcreate: PropTypes.func.isRequired,\n};\n\nconst itemState = (state) => ({\n\tuser: state.user,\n});\n\nexport default connect(itemState, { create })(withRouter(Item));\n"
+        }
+    ]
+}

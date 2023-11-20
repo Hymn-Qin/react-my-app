@@ -23,13 +23,13 @@ const Index = () => (
 		{/*<GlobalStyle />*/}
 		{/* 创建一个history BrowserRouter */}
 		<Router>
-			<ScrollToTop/>
-			<App/>
+			<ScrollToTop />
+			<App />
 		</Router>
 	</Provider>
 );
 
-ReactDOM.render(<Index/>, document.getElementById('root'));
+ReactDOM.render(<Index />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

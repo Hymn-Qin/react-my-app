@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/layout/header/MenuItem.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1700310326745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1700310326745,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport PropTypes from 'prop-types';\nimport { Link, withRouter } from 'react-router-dom';\n// UI values\nimport { white } from '@components/values/colors';\nimport { primary, secondary } from '@components/values/gradients';\nimport { level1 } from '@components/values/shadows';\n\n\nconst MenuItem = (props) => {\n\tconst isActiveRoute = () => {\n\t\tconst currentSection = props.location.pathname.split('/')[1];\n\n\t\treturn (\n\t\t\tcurrentSection === props.to.split('/')[1] &&\n\t\t\t(currentSection === props.section ||\n\t\t\t\tprops.location.pathname === props.to ||\n\t\t\t\tprops.active)\n\t\t);\n\t};\n\treturn (<Link\n\t\tto={props.to}\n\t\tstyle={Object.assign(\n\t\t\t{\n\t\t\t\tpadding: '0.6em 1em',\n\t\t\t\ttextTransform: 'uppercase',\n\t\t\t\tcolor: white,\n\t\t\t\toutline: 'none',\n\t\t\t\thidefocus: 'hidefocus',\n\t\t\t},\n\t\t\tisActiveRoute()\n\t\t\t\t? {\n\t\t\t\t\tbackgroundImage: props.type === 'secondary' ? secondary : primary,\n\t\t\t\t\tborderRadius: '1.4em',\n\t\t\t\t\tboxShadow: level1,\n\t\t\t\t}\n\t\t\t\t: props.style,\n\t\t)}>\n\t\t{props.children}\n\t</Link>);\n};\n\n// Component Properties\nMenuItem.propTypes = {\n\tto: PropTypes.string.isRequired,\n\ttype: PropTypes.string,\n\tactive: PropTypes.bool,\n\tstyle: PropTypes.object,\n};\nMenuItem.defaultProps = {\n\ttype: 'secondary',\n\tactive: false,\n\tstyle: {},\n};\n\nexport default withRouter(MenuItem);\n"
+        }
+    ]
+}

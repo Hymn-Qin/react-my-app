@@ -35,16 +35,16 @@ import React, {Component, useEffect, useState} from 'react';
 // }
 
 function Clock() {
-	const [date, setDate] = useState(new Date())
+	const [date, setDate] = useState(new Date());
 	useEffect(() => {
 		const timerID = setInterval(() => setDate(new Date()), 1000);
 		return () => {
-			clearInterval(timerID)
-		}
-	})
+			clearInterval(timerID);
+		};
+	});
 	return (
 		<div>{date.toLocaleString()}</div>
-	)
+	);
 }
 
 export default Clock;

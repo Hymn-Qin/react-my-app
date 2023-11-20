@@ -24,16 +24,14 @@ class JX extends Component {
       return <span>Error: {this.state.error.message}</span>;
     } else {
       var repos = this.state.data.items;
-      var repoList = repos.map((repo, index) => {
-        return (
-          <li key={index}>
-            <a href={repo.html_url}>{repo.name}</a>({repo.stargazers_count}{' '}
-            stars)
-            <br/>
-            {repo.description}
-          </li>
-        );
-      });
+      var repoList = repos.map((repo, index) => (
+        <li key={index}>
+          <a href={repo.html_url}>{repo.name}</a>({repo.stargazers_count}{' '}
+          stars)
+          <br />
+          {repo.description}
+        </li>
+      ));
     }
     return (
       <main>

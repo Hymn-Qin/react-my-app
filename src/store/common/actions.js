@@ -17,19 +17,19 @@ export function upload(data) {
 
 	return async dispatch => {
 
-		const [error, file] = await uploadApi(data)
+		const [error, file] = await uploadApi(data);
 		if (file) {
-			dispatch(messageShow('File uploaded successfully.'))
-			return file
+			dispatch(messageShow('File uploaded successfully.'));
+			return file;
 		}
 
 		if (error) {
-			dispatch(messageShow('There was some error. Please try again.'))
+			dispatch(messageShow('There was some error. Please try again.'));
 		}
 
 		window.setTimeout(() => {
-			dispatch(messageHide())
-		}, 5000)
-		return null
-	}
+			dispatch(messageHide());
+		}, 5000);
+		return null;
+	};
 }

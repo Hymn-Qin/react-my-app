@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/layout/header/Header.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1700310302825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1700310302825,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport PropTypes from 'prop-types';\nimport { withRouter } from 'react-router-dom';\nimport { connect } from 'react-redux';\n// UI\nimport { primary as primaryGradient } from '@components/values/gradients';\nimport { level1 } from '@components/values/shadows';\nimport { Grid, GridCell } from '@components/grid';\n// Module\nimport Menu from './Menu';\nimport MenuItem from './MenuItem';\nimport Logo from './Logo';\n// route\nimport userRoutes from '@routes/user';\nimport * as admin from '@routes/admin/dashboard';\nimport crateRoutes from '@routes/crate';\nimport homeRoutes from '@routes/home';\n\nconst Header = (props) => (\n  <header\n    style={{\n      backgroundImage: primaryGradient,\n      boxShadow: level1,\n      padding: '0 2em',\n      height: '5em',\n      position: 'fixed',\n      left: 0,\n      right: 0,\n      top: 0,\n      zIndex: 1//悬浮在最顶层\n    }}\n  >\n    <Grid alignCenter={true} style={{ marginTop: '1.5em' }}>\n      <GridCell>\n        {/* Logo */}\n        <Logo style={{ float: 'left' }} />\n\n        {/* Left Menu */}\n        <Menu style={{ float: 'left', marginTop: '0.5em', marginLeft: '2em' }}>\n          <MenuItem to={homeRoutes.men.path}>Men</MenuItem>\n\n          <MenuItem to={homeRoutes.women.path}>Women</MenuItem>\n\n          <MenuItem to={homeRoutes.howItWorks.path}>How It Works</MenuItem>\n\n          <MenuItem to={homeRoutes.whatsNew.path}>What&apos;s New</MenuItem>\n        </Menu>\n      </GridCell>\n\n      <GridCell style={{ textAlign: 'right' }}>\n        {/* Right Menu */}\n        {props.user.isAuthenticated\n          ? <Menu>\n            {props.user.detail.role === 'ADMIN' && <MenuItem to={admin.dashboard.path} section=\"admin\">Admin</MenuItem>}\n\n            <MenuItem to={crateRoutes.list.path}>Crates</MenuItem>\n\n            <MenuItem to={userRoutes.subscriptions.path}>Subscriptions</MenuItem>\n\n            <MenuItem to={userRoutes.profile.path}>Profile</MenuItem>\n          </Menu>\n          : <Menu>\n            <MenuItem to={userRoutes.login.path}>SignIn</MenuItem>\n\n            <MenuItem to={userRoutes.register.path}>SignUp</MenuItem>\n          </Menu>\n        }\n      </GridCell>\n    </Grid>\n  </header>\n);\n// Component Properties\nHeader.propTypes = {\n  user: PropTypes.object.isRequired,\n};\n\nconst headerState = (state) => ({\n  user: state.user,\n});\n\nexport default withRouter(connect(headerState, {})(Header));\n"
+        }
+    ]
+}

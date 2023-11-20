@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/routes/user.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1700310550912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1700310550912,
+            "name": "Commit-0",
+            "content": "import Login from '../pages/user/Login';\nimport Register from '../pages/user/Register';\nimport Profile from '../pages/user/Profile';\nimport Subscriptions from '../pages/subscription/Subscriptions';\n\nexport default {\n  login: {\n    path: '/user/login',\n    component: Login,\n  },\n  register: {\n    path: '/user/register',\n    component: Register,\n  },\n  //detail: {\n  //\tpath: (slug = ':slug') => `/user/${slug}`,\n  //\tcomponent: Detail,\n  //},\n  profile: {\n    path: '/user/profile',\n    component: Profile,\n    auth: true,\n  },\n  subscriptions: {\n    path: '/user/subscriptions',\n    component: Subscriptions,\n    auth: true,\n  },\n};\n"
+        }
+    ]
+}

@@ -112,11 +112,11 @@ export function logoutUnsetUserLocalStorageAndCookie() {
 export function getGenders() {
 	return async dispatch => {
 
-		const [error, genders] = await userGenders()
-		if (genders) return genders
+		const [error, genders] = await userGenders();
+		if (genders) return genders;
 		if (error) {
-			dispatch(messageShow('There was some error fetching product types. Please try again.'))
+			dispatch(messageShow('There was some error fetching product types. Please try again.'));
 		}
-		return null
+		return null;
 	};
 }

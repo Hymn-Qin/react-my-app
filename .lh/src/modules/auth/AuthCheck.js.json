@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/modules/auth/AuthCheck.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1700310384048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1700310384048,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport { connect } from 'react-redux';\nimport PropTypes from 'prop-types';\nimport { Redirect } from 'react-router-dom';\n\nimport adminRoutes from '@routes/admin';\nimport crateRoutes from '@routes/crate';\n\nconst AuthCheck = (props) =>\n\tprops.user.isAuthenticated\n\t\t? props.user.detail.role === 'ADMIN'\n\t\t\t? <Redirect to={adminRoutes.dashboard.path} />\n\t\t\t: <Redirect to={crateRoutes.list.path} />\n\t\t: ''\n\t;\n\nAuthCheck.propTypes = {\n\tuser: PropTypes.object.isRequired,\n};\n\nconst authCheckState = (state) => ({\n\tuser: state.user,\n});\n\nexport default connect(authCheckState, {})(AuthCheck);\n"
+        }
+    ]
+}

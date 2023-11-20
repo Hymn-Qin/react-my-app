@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/modules/auth/RoutePrivate.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1700310375858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1700310375858,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport PropTypes from 'prop-types';\nimport { Redirect, Route } from 'react-router-dom';\nimport { connect } from 'react-redux';\n\nimport userRoutes from '@routes/user';\n\n//Component\nconst RoutePrivate = (props) =>\n  //是否登录  是 进入角色权限判断  否 进入登录页\n  props.user.isAuthenticated\n    //当前路由是否需要判断权限  是 进入权限判断  否 进入页面\n    ? props.role\n      //根据路由配置的权限 判断登录用户角色是否符合  是 进入页面  否  进入登录\n      ? props.user.detail.role === props.role\n        ? <Route {...props} component={props.component} />\n        : <Redirect to={userRoutes.login.path} />\n      : <Route {...props} component={props.component} />\n    : <Redirect to={userRoutes.login.path} />\n  ;\n\nRoutePrivate.propTypes = {\n  user: PropTypes.object.isRequired,\n};\n\nconst routePrivateState = (state) => ({\n  user: state.user,\n});\n\nexport default connect(routePrivateState, {})(RoutePrivate);\n"
+        }
+    ]
+}

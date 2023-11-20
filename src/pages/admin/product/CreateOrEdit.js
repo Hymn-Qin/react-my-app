@@ -47,17 +47,17 @@ const CreateOrEdit = (props) => {
 		props.getProductTypes()
 			.then((types) => {
 				if (types) {
-					let product = state.product
-					product.type = types[0].id
-					setState(state => ({...state, productTypes: types, product: product}))
+					let product = state.product;
+					product.type = types[0].id;
+					setState(state => ({ ...state, productTypes: types, product: product }));
 				}
 			});
 		props.getUserGenders()
 			.then((userGenders) => {
 				if (userGenders) {
-					let product = state.product
-					product.gender = userGenders[0].id
-					setState(state => ({...state, userGenders: userGenders, product: product}))
+					let product = state.product;
+					product.gender = userGenders[0].id;
+					setState(state => ({ ...state, userGenders: userGenders, product: product }));
 				}
 			});
 
@@ -77,6 +77,7 @@ const CreateOrEdit = (props) => {
 		if (e.target.name === 'name') {
 			product.slug = slug(e.target.value);
 		}
+		// eslint-disable-next-line no-constant-condition
 		if (e.target.name === 'type' || 'gender') {
 			product[e.target.name] = parseInt(e.target.value);
 		}
@@ -119,7 +120,7 @@ const CreateOrEdit = (props) => {
 			</Helmet>
 
 			{/* Top menu bar */}
-			<AdminMenu/>
+			<AdminMenu />
 
 			{/* Page content	*/}
 			<div>
@@ -217,7 +218,7 @@ const CreateOrEdit = (props) => {
 								{/*	Upload image */}
 								{renderIf(state.product.image !== '', () => (
 									<img src={routeImage + state.product.image} alt='Product Image'
-											 style={{ width: 200, marginTop: '1em' }}/>
+										style={{ width: 200, marginTop: '1em' }} />
 								))}
 							</div>
 

@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/layout/ScrollToTop.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1700310267037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700310281817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,5 @@\n \t}, [props.location.pathname])\n \treturn null;\n };\n \n-export default ScrollToTop;\n+export default withRouter(ScrollToTop);\n"
+                }
+            ],
+            "date": 1700310267037,
+            "name": "Commit-0",
+            "content": "// Imports\nimport { PureComponent, useEffect } from 'react';\nimport { withRouter } from 'react-router-dom';\n\n// Component\nconst ScrollToTop = (props) => {\n\tuseEffect(() => {\n\t\twindow.scrollTo(0, 0);\n\t}, [props.location.pathname])\n\treturn null;\n};\n\nexport default ScrollToTop;\n"
+        }
+    ]
+}

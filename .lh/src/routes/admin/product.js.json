@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/routes/admin/product.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1700310563072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1700310563072,
+            "name": "Commit-0",
+            "content": "import params from '../../config/params';\nimport Product from '../../pages/admin/Product';\nimport ProductList from '@pages/admin/product/List';\nimport ProductCreateOrEdit from '@pages/admin/product/CreateOrEdit';\n\n\n\nexport const productList = {\n\tpath: '/admin/products',\n\tcomponent: ProductList,\n\tauth: true,\n\trole: params.user.roles.admin\n};\n\nexport const productCreate = {\n\tpath: '/admin/product/create',\n\tcomponent: ProductCreateOrEdit,\n\tauth: true,\n\trole: params.user.roles.admin\n};\n// 管理员输入商品\nexport const productEdit = {\n\tpath: (id = ':id') => `/admin/product/${id}/edit`,\n\tcomponent: ProductCreateOrEdit,\n\tauth: true,\n\trole: params.user.roles.admin\n};\n"
+        }
+    ]
+}

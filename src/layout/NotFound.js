@@ -27,7 +27,7 @@ const NotFound = () => (
           <img src={`${routeLocal}/images/crate-broken.png`} alt="404" style={{ width: '10em' }}/>
         </p>
 
-        <H3 font="secondary">Page you are looking for does not exists or has removed. It's 404.</H3>
+        <H3 font="secondary">Page you are looking for does not exists or has removed. It&apos;s 404.</H3>
 
         <p style={{ marginTop: '2em' }}>What can you do?</p>
 

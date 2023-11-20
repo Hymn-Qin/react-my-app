@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/routes/home.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1700310533911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1700310533911,
+            "name": "Commit-0",
+            "content": "import Home from '../pages/home/Home';\nimport Men from '../pages/home/Men';\nimport Women from '../pages/home/Women';\nimport HowItWorks from '../pages/home/HowItWorks';\nimport WhatsNew from '../pages/home/WhatsNew';\n// 注册路由\nexport default {\n  home: {\n    path: '/',\n    component: Home,\n    exact: true,\n  },\n  men: {\n    path: '/men',\n    component: Men,\n\n  },\n  women: {\n    path: '/women',\n    component: Women,\n  },\n  howItWorks: {\n    path: '/how-it-works',\n    component: HowItWorks,\n  },\n  whatsNew: {\n    path: '/whats-new',\n    component: WhatsNew\n  }\n};\n"
+        }
+    ]
+}
